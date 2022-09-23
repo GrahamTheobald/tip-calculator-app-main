@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+$StrongCyan: hsl(172, 67%, 45%);
+$VeryDarkCyan: hsl(183, 100%, 15%);
+$DarkGrayishCyan: hsl(186, 14%, 43%);
+$GrayishCyan: hsl(184, 14%, 56%);
+$LightGrayishCyan: hsl(185, 41%, 84%);
+$VeryLightGrayishCyan: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Space Mono';
+    font-size: 24px;
+    background-color: $LightGrayishCyan;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    display: block;
+    margin: 3rem auto;
+}
+.calculator{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: $White;
+    padding: 1.5rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    &__buttons {
+        &__input {
+            label {
+                font-size: 1rem;
+                color:$DarkGrayishCyan;
+            }
+            .input-container {
+                position: relative;
+                input::placeholder{
+                    text-align: right;
+                    font-size: 1.5rem;
+                    font-family: inherit;
+                    color: $GrayishCyan;
+                }
+                input {
+                    padding: .5rem;
+                    border: none;
+                    border-radius: .3rem;
+                    font-size: 1.5rem;
+                    font-family: inherit;
+                    font-size: inherit;
+                    background-color: $VeryLightGrayishCyan;
+                }
+                img {
+                    position: absolute;
+                    top: 50%;
+                    translate: 0 -50%;
+                    left: 5%
+                }
+            }
+        }
+        &__select {
+            margin: 1.5rem 0rem;
+            p {
+                font-size: 1rem;
+                color: $DarkGrayishCyan;
+                margin-bottom: 1rem;
+            }
+            .select-grid {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                div.active {
+                    background-color: $StrongCyan;
+                    color: $DarkGrayishCyan;
+                }
+                div{
+                    padding: .3rem;
+                    border-radius: .3rem;
+                    text-align: center;
+                    background-color: $VeryDarkCyan;
+                    color: $White;
+                }
+                input::placeholder{
+                    text-align: right;
+                    font-size: 1.5rem;
+                    font-family: inherit;
+                    color: $GrayishCyan;
+                }
+                input {
+                    padding: .3rem;
+                    border: none;
+                    border-radius: .3rem;
+                    font-size: 1.5rem;
+                    font-family: inherit;
+                    font-size: inherit;
+                    background-color: $VeryLightGrayishCyan;
+                    width:100%;
+                }
+            }
+        }
+    }
+    &__display {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        border-radius: 1rem;
+        background-color: $VeryDarkCyan;
+        &__result {
+            display: flex;
+            justify-content: space-between;
+            .label{
+                h2 {
+                    font-size: 1rem;
+                    color: $White;
+                }
+                p {
+                    font-size: .7rem;
+                    color: $DarkGrayishCyan;
+                }
+            }
+            .amount {
+                font-size: 2rem;
+                color: $StrongCyan;
+            }
+        }
+        .reset {
+            outline: none;
+            border: none;
+            width: 100%;
+            padding: .5rem;
+            font-size: inherit;
+            font-family: inherit;
+            text-transform: uppercase;
+            border-radius: .5rem;
+            background-color: $StrongCyan;
+            color: $VeryDarkCyan;
+        }
+    }
+}
