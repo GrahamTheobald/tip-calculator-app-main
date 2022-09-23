@@ -14,9 +14,11 @@
     <div class="calculator">
       <section class="calculator__buttons">
         <article class="calculator__buttons__input">
-          <label for="bill">
-            Bill
-          </label>
+          <div class="label-container">
+            <label for="bill">
+              Bill
+            </label>
+          </div>
           <div class="input-container">
             <input type="number" name="bill" id="bill" placeholder="0">
             <img src="./images/icon-dollar.svg" alt="dollar">
@@ -31,14 +33,17 @@
             <div data-percent="15">15%</div>
             <div data-percent="25">25%</div>
             <div data-percent="50">50%</div>
-            <input type="number" name="custom" id="custom" placeholder="Custom">
+            <input type="number" name="custom" id="custom" min="1" placeholder="Custom">
           </div>
         </article>
 
         <article class="calculator__buttons__input">
-          <label for="people">
-            Number of People
-          </label>
+          <div class="label-container">
+            <label for="people">
+              Number of People
+            </label>
+            <p class="error-message">Can't be zero.</p>
+          </div>
           <div class="input-container">
             <input type="number" name="people" id="people" placeholder="0">
             <img src="./images/icon-person.svg" alt="person">

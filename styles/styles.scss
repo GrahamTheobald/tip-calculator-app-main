@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 $StrongCyan: hsl(172, 67%, 45%);
+$HighlightCyan: hsl(172, 67%, 55%);
 $VeryDarkCyan: hsl(183, 100%, 15%);
 $DarkGrayishCyan: hsl(186, 14%, 43%);
 $GrayishCyan: hsl(184, 14%, 56%);
 $LightGrayishCyan: hsl(185, 41%, 84%);
 $VeryLightGrayishCyan: hsl(189, 41%, 97%);
 $White: hsl(0, 0%, 100%);
+$Error: hsl(27, 80%, 40%);
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -35,14 +37,36 @@ body {
     padding: 1.5rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
+    .error-message {
+        display: none
+    }
+    .error-message.reveal {
+        display: block
+    }
+    input:focus-within {
+        outline: 2px solid $HighlightCyan ;
+    }
+    input.error:focus-within {
+        outline: 2px solid $Error;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+    }
     &__buttons {
         &__input {
-            label {
+            .label-container {
+                display: flex;
+                justify-content: space-between;
                 font-size: 1rem;
                 color:$DarkGrayishCyan;
+                .error-message {
+                    color: $Error;
+                }
             }
             .input-container {
                 position: relative;
+
                 input::placeholder{
                     text-align: right;
                     font-size: 1.5rem;
@@ -50,6 +74,7 @@ body {
                     color: $GrayishCyan;
                 }
                 input {
+                    width: 100%;
                     padding: .5rem;
                     border: none;
                     border-radius: .3rem;
@@ -57,6 +82,8 @@ body {
                     font-family: inherit;
                     font-size: inherit;
                     background-color: $VeryLightGrayishCyan;
+                    text-align: right;
+                    color: $VeryDarkCyan;
                 }
                 img {
                     position: absolute;
@@ -79,15 +106,16 @@ body {
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto;
                 div.active {
-                    background-color: $StrongCyan;
+                    background-color: $HighlightCyan;
                     color: $DarkGrayishCyan;
                 }
-                div{
+                div {
                     padding: .3rem;
                     border-radius: .3rem;
                     text-align: center;
                     background-color: $VeryDarkCyan;
                     color: $White;
+                    cursor: pointer;
                 }
                 input::placeholder{
                     text-align: right;
@@ -104,6 +132,9 @@ body {
                     font-size: inherit;
                     background-color: $VeryLightGrayishCyan;
                     width:100%;
+                    text-align: right;
+                    color: $VeryDarkCyan;
+                    -webkit-appearance: none;
                 }
             }
         }
@@ -144,6 +175,9 @@ body {
             border-radius: .5rem;
             background-color:hsl(183, 100%, 20%);
             color: $VeryDarkCyan;
+        }
+        .reset:hover {
+            background-color: $HighlightCyan;
         }
     }
 }

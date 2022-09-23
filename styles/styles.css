@@ -29,9 +29,30 @@ body {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
-.calculator__buttons__input label {
+.calculator .error-message {
+  display: none;
+}
+.calculator .error-message.reveal {
+  display: block;
+}
+.calculator input:focus-within {
+  outline: 2px solid hsl(172deg, 67%, 55%);
+}
+.calculator input.error:focus-within {
+  outline: 2px solid hsl(27deg, 80%, 40%);
+}
+.calculator input[type=number]::-webkit-inner-spin-button,
+.calculator input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.calculator__buttons__input .label-container {
+  display: flex;
+  justify-content: space-between;
   font-size: 1rem;
   color: hsl(186deg, 14%, 43%);
+}
+.calculator__buttons__input .label-container .error-message {
+  color: hsl(27deg, 80%, 40%);
 }
 .calculator__buttons__input .input-container {
   position: relative;
@@ -43,6 +64,7 @@ body {
   color: hsl(184deg, 14%, 56%);
 }
 .calculator__buttons__input .input-container input {
+  width: 100%;
   padding: 0.5rem;
   border: none;
   border-radius: 0.3rem;
@@ -50,6 +72,8 @@ body {
   font-family: inherit;
   font-size: inherit;
   background-color: hsl(189deg, 41%, 97%);
+  text-align: right;
+  color: hsl(183deg, 100%, 15%);
 }
 .calculator__buttons__input .input-container img {
   position: absolute;
@@ -72,7 +96,7 @@ body {
   grid-template-rows: auto;
 }
 .calculator__buttons__select .select-grid div.active {
-  background-color: hsl(172deg, 67%, 45%);
+  background-color: hsl(172deg, 67%, 55%);
   color: hsl(186deg, 14%, 43%);
 }
 .calculator__buttons__select .select-grid div {
@@ -81,6 +105,7 @@ body {
   text-align: center;
   background-color: hsl(183deg, 100%, 15%);
   color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
 }
 .calculator__buttons__select .select-grid input::placeholder {
   text-align: right;
@@ -97,6 +122,9 @@ body {
   font-size: inherit;
   background-color: hsl(189deg, 41%, 97%);
   width: 100%;
+  text-align: right;
+  color: hsl(183deg, 100%, 15%);
+  -webkit-appearance: none;
 }
 .calculator__display {
   display: flex;
@@ -133,6 +161,9 @@ body {
   border-radius: 0.5rem;
   background-color: hsl(183deg, 100%, 20%);
   color: hsl(183deg, 100%, 15%);
+}
+.calculator__display .reset:hover {
+  background-color: hsl(172deg, 67%, 55%);
 }
 
 @media screen and (min-width: 600px) {
