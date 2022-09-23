@@ -142,8 +142,38 @@ body {
             font-family: inherit;
             text-transform: uppercase;
             border-radius: .5rem;
-            background-color: $StrongCyan;
+            background-color:hsl(183, 100%, 20%);
             color: $VeryDarkCyan;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .calculator {
+        padding: 2rem;
+        border-radius: 1rem;
+        flex-direction: row;
+        max-width: 900px;
+        &__buttons {
+            flex: 7;
+            padding: 2rem 1rem;
+            .select-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        &__display {
+            flex: 5;
+            gap: 2rem;
+            padding: 4rem 3rem 3rem 3rem ;
+            .reset {
+                margin-top: auto;
+            }
+            &__result{
+                align-items: center;
+                .amount {
+                    font-size: 2.3rem;
+                }
+            }
         }
     }
 }

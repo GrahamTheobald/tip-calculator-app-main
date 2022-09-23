@@ -131,8 +131,38 @@ body {
   font-family: inherit;
   text-transform: uppercase;
   border-radius: 0.5rem;
-  background-color: hsl(172deg, 67%, 45%);
+  background-color: hsl(183deg, 100%, 20%);
   color: hsl(183deg, 100%, 15%);
+}
+
+@media screen and (min-width: 600px) {
+  .calculator {
+    padding: 2rem;
+    border-radius: 1rem;
+    flex-direction: row;
+    max-width: 900px;
+  }
+  .calculator__buttons {
+    flex: 7;
+    padding: 2rem 1rem;
+  }
+  .calculator__buttons .select-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .calculator__display {
+    flex: 5;
+    gap: 2rem;
+    padding: 4rem 3rem 3rem 3rem;
+  }
+  .calculator__display .reset {
+    margin-top: auto;
+  }
+  .calculator__display__result {
+    align-items: center;
+  }
+  .calculator__display__result .amount {
+    font-size: 2.3rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
