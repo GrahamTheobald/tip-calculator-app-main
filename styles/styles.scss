@@ -46,7 +46,7 @@ body {
     input:focus-within {
         outline: 2px solid $HighlightCyan ;
     }
-    input.error:focus-within {
+    input.error:focus-within, input.error {
         outline: 2px solid $Error;
     }
     input[type=number]::-webkit-inner-spin-button, 
@@ -105,9 +105,13 @@ body {
                 gap: 1rem;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto;
-                div.active {
+                div:hover{
                     background-color: $HighlightCyan;
                     color: $DarkGrayishCyan;
+                }
+                div.active {
+                    background-color: $StrongCyan;
+                    color: $VeryDarkCyan;
                 }
                 div {
                     padding: .3rem;
@@ -163,6 +167,9 @@ body {
                 font-size: 2rem;
                 color: $StrongCyan;
             }
+        }
+        .reset.not-empty {
+            background-color: $StrongCyan;
         }
         .reset {
             outline: none;

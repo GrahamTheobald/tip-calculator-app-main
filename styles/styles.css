@@ -38,7 +38,7 @@ body {
 .calculator input:focus-within {
   outline: 2px solid hsl(172deg, 67%, 55%);
 }
-.calculator input.error:focus-within {
+.calculator input.error:focus-within, .calculator input.error {
   outline: 2px solid hsl(27deg, 80%, 40%);
 }
 .calculator input[type=number]::-webkit-inner-spin-button,
@@ -56,6 +56,18 @@ body {
 }
 .calculator__buttons__input .input-container {
   position: relative;
+}
+.calculator__buttons__input .input-container input::-moz-placeholder {
+  text-align: right;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: hsl(184deg, 14%, 56%);
+}
+.calculator__buttons__input .input-container input:-ms-input-placeholder {
+  text-align: right;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: hsl(184deg, 14%, 56%);
 }
 .calculator__buttons__input .input-container input::placeholder {
   text-align: right;
@@ -95,9 +107,13 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 }
-.calculator__buttons__select .select-grid div.active {
+.calculator__buttons__select .select-grid div:hover {
   background-color: hsl(172deg, 67%, 55%);
   color: hsl(186deg, 14%, 43%);
+}
+.calculator__buttons__select .select-grid div.active {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
 }
 .calculator__buttons__select .select-grid div {
   padding: 0.3rem;
@@ -106,6 +122,18 @@ body {
   background-color: hsl(183deg, 100%, 15%);
   color: hsl(0deg, 0%, 100%);
   cursor: pointer;
+}
+.calculator__buttons__select .select-grid input::-moz-placeholder {
+  text-align: right;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: hsl(184deg, 14%, 56%);
+}
+.calculator__buttons__select .select-grid input:-ms-input-placeholder {
+  text-align: right;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: hsl(184deg, 14%, 56%);
 }
 .calculator__buttons__select .select-grid input::placeholder {
   text-align: right;
@@ -149,6 +177,9 @@ body {
 .calculator__display__result .amount {
   font-size: 2rem;
   color: hsl(172deg, 67%, 45%);
+}
+.calculator__display .reset.not-empty {
+  background-color: hsl(172deg, 67%, 45%);
 }
 .calculator__display .reset {
   outline: none;
@@ -194,6 +225,4 @@ body {
   .calculator__display__result .amount {
     font-size: 2.3rem;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
